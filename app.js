@@ -25,7 +25,6 @@ const bodyParser = require('body-parser')
 
 const bodyParserJSON = bodyParser.json()
 
-const controllerFilme = require('./controller/filme/filme.js')
 
 const app = express ()
 
@@ -39,6 +38,8 @@ app.use((request, response, next) =>{
 
     next()
 })
+
+const controllerFilme = require('./controller/filme/filme.js')
 
 app.post('/v1/controle-filme/filme', cors(), bodyParserJSON, async function(request, response){
     let dadosBody = request.body
